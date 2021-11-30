@@ -8,6 +8,13 @@ authors = ["Igor Kruglyak <igorkruglyak@gmail.com>"]
 python = "^3.10"
 asyncio = "^3.4.3"
 pyppeteer = "^0.2.6"
+aiogram = "^2.16"
+validators = "^0.18.2"
+Pillow = "^8.4.0"
+selenium = "^4.1.0"
+requests = "^2.26.0"
+urllib3 = "^1.26.7"
+aiohttp = "^3.8.1"
 
 [tool.poetry.dev-dependencies]
 

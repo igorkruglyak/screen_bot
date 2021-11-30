@@ -20,14 +20,14 @@ TOKEN = config["TELEGRAM"]["TOKEN"]
 
 # Initialize bot.
 bot = Bot(token=TOKEN)
-dispatcher = Dispatcher(bot)
+dp = Dispatcher(bot)
 
 
 @dispatcher.message_handler(commands=["start"])
 async def start(message: types.Message):
     """Send bot discription."""
     await message.answer(
-        "Please, send me a link and I'll send you a screenshot 🤖"
+        "Please, send me a link and I'll send you a screenshot ☝🤖️"
     )
 
 
@@ -46,8 +46,9 @@ async def send_screenshot(message: types.Message):
 
             await make_screenshot(url, file_path)  # Make screenshot.
 
-            await message.answer_document(  
-                open(file_path, "rb")      
+            
+            await message.answer_document(  # Send screenshot like file
+                open(file_path, "rb")       
             )
             os.remove(file_path)  # Remove file.
     else:
@@ -57,4 +58,4 @@ async def send_screenshot(message: types.Message):
     
 
 if __name__ == '__main__':
-    executor.start_polling(dispatcher, skip_updates=True)
+    executor.start_polling(dp, skip_updates=True)
