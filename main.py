@@ -23,7 +23,7 @@ bot = Bot(token=TOKEN)
 dp = Dispatcher(bot)
 
 
-@dispatcher.message_handler(commands=["start"])
+@dp.message_handler(commands=["start"])
 async def start(message: types.Message):
     """Send bot discription."""
     await message.answer(
@@ -31,7 +31,7 @@ async def start(message: types.Message):
     )
 
 
-@dispatcher.message_handler()
+@dp.message_handler()
 async def send_screenshot(message: types.Message):
     """Get url and send screenshot to user."""
 
